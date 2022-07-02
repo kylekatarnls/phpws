@@ -8,13 +8,9 @@
 
 namespace Devristo\Phpws\Server\UriHandler;
 
-use Devristo\Phpws\Messaging\MessageInterface;
 use Devristo\Phpws\Messaging\WebSocketMessageInterface;
-use Devristo\Phpws\Protocol\TransportInterface;
-use Devristo\Phpws\Protocol\WebSocketTransport;
 use Devristo\Phpws\Protocol\WebSocketTransportInterface;
-use Devristo\Phpws\Server\WebSocketServer;
-use Zend\Log\LoggerInterface;
+use Laminas\Log\LoggerInterface;
 
 class ClientRouter {
     protected $handlers;

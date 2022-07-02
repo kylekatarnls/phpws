@@ -2,7 +2,7 @@
 <?php
 
 // Set timezone of script to UTC inorder to avoid DateTime warnings in
-// vendor/zendframework/zend-log/Zend/Log/Logger.php
+// vendor/laminas/laminas-log/src/Logger.php
 date_default_timezone_set('UTC');
 
 require_once("../vendor/autoload.php");
@@ -64,8 +64,8 @@ class ChatHandlerForUnroutedUrls extends WebSocketUriHandler {
 $loop = \React\EventLoop\Factory::create();
 
 // Create a logger which writes everything to the STDOUT
-$logger = new \Zend\Log\Logger();
-$writer = new Zend\Log\Writer\Stream("php://output");
+$logger = new \Laminas\Log\Logger();
+$writer = new \Laminas\Log\Writer\Stream("php://output");
 $logger->addWriter($writer);
 
 // Create a WebSocket server

@@ -5,15 +5,14 @@ namespace Devristo\Phpws\Server;
 use Devristo\Phpws\Framing\WebSocketFrame;
 use Devristo\Phpws\Framing\WebSocketOpcode;
 use Devristo\Phpws\Protocol\Handshake;
+use Devristo\Phpws\Protocol\WebSocketConnection;
 use Devristo\Phpws\Protocol\WebSocketTransportHybi;
 use Devristo\Phpws\Protocol\WebSocketTransportInterface;
-use Devristo\Phpws\Protocol\WebSocketConnection;
 use Evenement\EventEmitter;
-use Exception;
+use Laminas\Log\LoggerInterface;
+use Laminas\Uri\Uri;
 use React\EventLoop\LoopInterface;
 use SplObjectStorage;
-use Zend\Log\LoggerInterface;
-use Zend\Uri\Uri;
 
 /**
  * WebSocketServer
@@ -61,7 +60,7 @@ class WebSocketServer extends EventEmitter
      *
      * @param $url
      * @param \React\EventLoop\LoopInterface $loop
-     * @param \Zend\Log\LoggerInterface $logger
+     * @param \Laminas\Log\LoggerInterface $logger
      * @throws \InvalidArgumentException
      */
     public function __construct($url, LoopInterface $loop, LoggerInterface $logger)

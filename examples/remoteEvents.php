@@ -55,8 +55,8 @@ class StackHandler extends \Devristo\Phpws\Server\UriHandler\WebSocketUriHandler
 $loop = \React\EventLoop\Factory::create();
 
 // Create a logger which writes everything to the STDOUT
-$logger = new \Zend\Log\Logger();
-$writer = new \Zend\Log\Writer\Stream("php://output");
+$logger = new \Laminas\Log\Logger();
+$writer = new \Laminas\Log\Writer\Stream("php://output");
 $logger->addWriter($writer);
 
 $server = new WebSocketServer("tcp://0.0.0.0:12345", $loop, $logger);

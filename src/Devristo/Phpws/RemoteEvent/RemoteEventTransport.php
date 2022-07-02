@@ -8,13 +8,13 @@
 
 namespace Devristo\Phpws\RemoteEvent;
 
-use Devristo\Phpws\Messaging\RemoteEventMessage;
 use Devristo\Phpws\Messaging\MessageInterface;
+use Devristo\Phpws\Messaging\RemoteEventMessage;
 use Devristo\Phpws\Protocol\TransportInterface;
 use Evenement\EventEmitter;
+use Laminas\Log\LoggerInterface;
 use React\EventLoop\LoopInterface;
 use React\Promise\Deferred;
-use Zend\Log\LoggerInterface;
 
 class RemoteEventTransport extends EventEmitter implements TransportInterface{
     /**

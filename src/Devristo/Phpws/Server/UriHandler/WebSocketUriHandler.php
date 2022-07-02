@@ -6,8 +6,8 @@ use Devristo\Phpws\Messaging\WebSocketMessageInterface;
 use Devristo\Phpws\Protocol\WebSocketTransportInterface;
 use Devristo\Phpws\Server\WebSocketServer;
 use Evenement\EventEmitter;
+use Laminas\Log\LoggerInterface;
 use SplObjectStorage;
-use Zend\Log\LoggerInterface;
 
 class WebSocketUriHandler extends EventEmitter implements WebSocketUriHandlerInterface
 {

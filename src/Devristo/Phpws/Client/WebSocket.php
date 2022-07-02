@@ -3,22 +3,21 @@
 namespace Devristo\Phpws\Client;
 
 use Devristo\Phpws\Exceptions\WebSocketInvalidUrlScheme;
-use Devristo\Phpws\Framing\WebSocketFrameInterface;
 use Devristo\Phpws\Framing\WebSocketFrame;
+use Devristo\Phpws\Framing\WebSocketFrameInterface;
 use Devristo\Phpws\Framing\WebSocketOpcode;
 use Devristo\Phpws\Messaging\WebSocketMessageInterface;
 use Devristo\Phpws\Protocol\Handshake;
+use Devristo\Phpws\Protocol\WebSocketConnection;
 use Devristo\Phpws\Protocol\WebSocketTransport;
 use Devristo\Phpws\Protocol\WebSocketTransportHybi;
-use Devristo\Phpws\Protocol\WebSocketConnection;
 use Devristo\Phpws\Reflection\FullAccessWrapper;
 use Evenement\EventEmitter;
+use Laminas\Http\Request;
+use Laminas\Log\LoggerInterface;
+use Laminas\Uri\Uri;
 use React\EventLoop\LoopInterface;
 use React\Promise\Deferred;
-use Zend\Http\Request;
-use Zend\Http\Response;
-use Zend\Log\LoggerInterface;
-use Zend\Uri\Uri;
 
 class WebSocket extends EventEmitter
 {
